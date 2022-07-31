@@ -3,11 +3,11 @@
        
     </HEAD>
 	<BODY>
-    <b id="age">
+		<p>Free nicotine <b id="nicotine"></p>
     </BODY>
 	<script>
 const day = 24 * 60 * 60 * 1000;
-const age = document.getElementById("age");
+const nicotine = document.getElementById("nicotine");
 
 round_to = function(precision, value) {
     value = parseFloat(value);
@@ -21,7 +21,7 @@ day_diff = function(d1, d2) {
 }
 
 function update_age() {
-    age.innerHTML = round_to(8, day_diff('Jan 26, 2004 13:25:00', new Date()) / 365);
+    nicotine.innerHTML = round_to(8, day_diff('Jul 31, 2022 22:48:00', new Date()) / 365);
 }
 
 update_age();
