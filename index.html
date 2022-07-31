@@ -1,17 +1,31 @@
 <HTML>
     <HEAD>
-        <TITLE>Структура Web-страницы. Теги для работы с ней</TITLE>
-        <meta name="author" content="Alexopro">
-        <meta name="description" content="Сторуктура и теги Web-страниц">
-        <meta name="keywords" content="Web, tags, tag, Web-страницы, Web-страниц, CYR">
-        <meta name="de" content="Visual Studio Code">
+       
     </HEAD>
-    <BODY leftmargin="100" topmargin="50" bgcolor="black" text="white" >
-        <p>Для создания Web-страницы можно воспользоваться специальными программами редактирования документов Всемирной паутины.
-            Другой способ подготовки Web-страниц заключается в «ручном» создании кода документов на языке HTML – HyperText Markup Language – Язык разметки гипертекста.
-            Данный язык представляет собой довольно простой набор команд, описывающий структуру документа.
-            Язык HTML позволяет выделить в документе отдельные элементы – заголовки, абзацы, таблицы и т.д.
-            Файлы с текстом кода на языке HTML имеют расширение .html или .htm.</p>
-			<a href="/index1.html">2 Страница</a>
+    <b id="age">
     </BODY>
+	<script>
+const day = 24 * 60 * 60 * 1000;
+const age = document.getElementById("age");
+
+round_to = function(precision, value) {
+    value = parseFloat(value);
+    power_of_ten = 10 ** precision;
+    return Math.round(value * power_of_ten) / power_of_ten;
+}
+
+day_diff = function(d1, d2) {
+    /* totally not borrowed from kristians page */
+    return (d2 - Date.parse(d1)) / day;
+}
+
+function update_age() {
+    age.innerHTML = round_to(8, day_diff('Jan 26, 2004 13:25:00', new Date()) / 365);
+}
+
+update_age();
+setInterval(function() {
+    update_age();
+}, 100)
+</script>
 </HTML>
