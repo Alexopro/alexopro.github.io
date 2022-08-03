@@ -6,7 +6,7 @@
     <b id="age">
     </BODY>
 	<script>
-const day = 60 * 60 * 1000;
+const day = 24 * 60 * 60 * 1000;
 const age = document.getElementById("age");
 
 round_to = function(precision, value) {
@@ -21,7 +21,7 @@ day_diff = function(d1, d2) {
 }
 
 function update_age() {
-    age.innerHTML = round_to(8, day_diff('Jul 31, 2022 22:53:00', new Date()) / 365);
+    age.innerHTML = round_to(8, day_diff('Jul 31, 2022 22:53:00', new Date()) / 30);
 }
 
 update_age();
